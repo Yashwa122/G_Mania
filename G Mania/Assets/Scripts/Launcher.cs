@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
-using UnityEngine.SceneManagement;
 
 public class Launcher : MonoBehaviourPunCallbacks
 {
@@ -20,7 +19,12 @@ public class Launcher : MonoBehaviourPunCallbacks
 
     public override void OnJoinedLobby()
     {
+        MenuManager.Instance.OpenMenu("title");
         Debug.Log("Joined Lobby");
-        //SceneManager.LoadScene("Lobby");
+    }
+
+    void Update()
+    {
+        
     }
 }
