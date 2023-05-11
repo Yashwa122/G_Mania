@@ -8,16 +8,19 @@ public class Launcher : MonoBehaviourPunCallbacks
 {
     void Start()
     {
+        Debug.Log("Connecting to Master");
         PhotonNetwork.ConnectUsingSettings();
     }
 
     public override void OnConnectedToMaster()
     {
+        Debug.Log("Connected to Master");
         PhotonNetwork.JoinLobby();
     }
 
     public override void OnJoinedLobby()
     {
-        SceneManager.LoadScene("Lobby");
+        Debug.Log("Joined Lobby");
+        //SceneManager.LoadScene("Lobby");
     }
 }
